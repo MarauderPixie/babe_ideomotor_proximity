@@ -96,7 +96,8 @@ const post_test = babeViews.view_generator("post_test",{
     edu_question: 'Your major hand?',
     edu_graduated_high_school: 'left',
     edu_graduated_college: 'right',
-    edu_higher_degree: 'both equally'
+    edu_higher_degree: 'both equally',
+    buttonText: "Finish & Submit"
     // languages_question: 'Muttersprache',
     // languages_more: '(in der Regel die Sprache, die Sie als Kind zu Hause gesprochen haben)',
     // comments_question: 'Weitere Kommentare'
@@ -106,7 +107,7 @@ const post_test = babeViews.view_generator("post_test",{
 const thanks = babeViews.view_generator("thanks", {
     trials: 1,
     name: 'thanks',
-    title: 'Thank you for taking part in this experiment!<br /><br />You really earned yourself a coffee.',
+    title: 'Thank you for taking part in this experiment!<br /><br />You really earned yourself a cup of coffee.',
     prolificConfirmText: 'Press the button'
 });
 

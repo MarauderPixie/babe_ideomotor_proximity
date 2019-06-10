@@ -19,15 +19,15 @@ $("document").ready(function() {
             instructions,
             practice,
             begin_prompt,
-            //experiment,
+            experiment,
             //demographics,
             post_test,
             thanks,
         ],
         // Here, you can specify all information for the deployment
         deploy: {
-            experimentID: "1",
-            serverAppURL: "http://localhost:4000/api/submit_experiment/",
+            experimentID: "2",
+            serverAppURL: "https://babe.tadaa-data.de/api/submit_experiment/",
             // Possible deployment methods are:
             // "debug" and "directLink"
             // As well as "MTurk", "MTurkSandbox" and "Prolific"
