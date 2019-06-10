@@ -19,7 +19,7 @@ $("document").ready(function() {
             instructions,
             practice,
             begin_prompt,
-            //experiment,
+            experiment,
             //demographics,
             post_test,
             thanks,
