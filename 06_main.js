@@ -17,17 +17,17 @@ $("document").ready(function() {
         views_seq: [
             intro,
             instructions,
-            practice,
+            //practice,
             begin_prompt,
-            experiment,
+            //experiment,
             //demographics,
             post_test,
             thanks,
         ],
         // Here, you can specify all information for the deployment
         deploy: {
-            experimentID: "2",
-            serverAppURL: "https://babe.tadaa-data.de/api/submit_experiment/",
+            experimentID: "1",
+            serverAppURL: "https://babeserver.herokuapp.com/api/submit_experiment/",
             // Possible deployment methods are:
             // "debug" and "directLink"
             // As well as "MTurk", "MTurkSandbox" and "Prolific"
