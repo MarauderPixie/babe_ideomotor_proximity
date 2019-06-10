@@ -17,7 +17,7 @@ $("document").ready(function() {
         views_seq: [
             intro,
             instructions,
-            //practice,
+            practice,
             begin_prompt,
             //experiment,
             //demographics,
@@ -33,7 +33,7 @@ $("document").ready(function() {
             // As well as "MTurk", "MTurkSandbox" and "Prolific"
             deployMethod: "directLink",
             contact_email: "tanton@uos.de"
-            //prolificURL: "https://app.prolific.ac/not_available_yet"
+            // prolificURL: "https://app.prolific.ac/not_available_yet"
         },
         // Here, you can specify how the progress bar should look like
         progress_bar: {
