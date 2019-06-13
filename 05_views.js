@@ -53,9 +53,9 @@ const instructions = babeViews.view_generator("instructions",{
             Your task is to press a key depending on which symbol you see: 
             <br />
             <br />
-            press <strong>w</strong> for <strong>${tg_w}</strong>
+            press <strong>x</strong> for <strong>${tg_x}</strong>
             <br />
-            press <strong>o</strong> for <strong>${tg_o}</strong>
+            press <strong>m</strong> for <strong>${tg_m}</strong>
             <br />
             <br />
             Please try to answer as fast as possible!
@@ -89,10 +89,10 @@ const post_test = babeViews.view_generator("post_test",{
     // You can change much of what appears here, e.g., to present it in a different language, as follows:
     // buttonText: 'Weiter',
     // age_question: 'Alter',
-    // gender_question: 'Geschlecht',
-    // gender_male: 'männlich',
-    // gender_female: 'weiblich',
-    // gender_other: 'divers',
+    gender_question: 'Have you done a similar task before or know what a Simon Task is?',
+    gender_male: 'Yes (either or)',
+    gender_female: 'No',
+    gender_other: 'Yes, both.',
     edu_question: 'Your major hand?',
     edu_graduated_high_school: 'left',
     edu_graduated_college: 'right',

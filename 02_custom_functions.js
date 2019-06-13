@@ -7,8 +7,8 @@
 const coin = _.sample(["head", "tail"]); // You can determine global (random) parameters here
 // Declare your variables here
 const key_targets = _.shuffle(['circle', 'square']);
-const tg_w = key_targets[0];
-const tg_o = key_targets[1];
+const tg_x = key_targets[0];
+const tg_m = key_targets[1];
 
 
 /* Helper functions
