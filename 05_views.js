@@ -34,7 +34,13 @@ const intro = babeViews.view_generator("intro",{
             <strong>This is very important!</strong>
             <br />
             <br />
-            When you think you are ready, please proceed to the instruction.`,
+            <b>PLEASE ALSO NOTE:</b>
+            <br />
+            By proceeding to the next step, you <b>agree to your data being analyzed</b>. All collected data will be completely anonymized.
+            You can also abort the experiment at <b>any time</b> by closing this tab/window - no data will be submitted in that case.
+            <br />
+            <br />
+            When you think you are ready, please proceed to the instructions.`,
    buttonText: 'To the instructions'    
 });
 
@@ -53,9 +59,9 @@ const instructions = babeViews.view_generator("instructions",{
             Your task is to press a key depending on which symbol you see: 
             <br />
             <br />
-            press <strong>x</strong> for <strong>${tg_x}</strong>
+            press <strong>x</strong> for <strong>${target1}</strong>
             <br />
-            press <strong>m</strong> for <strong>${tg_m}</strong>
+            press <strong>m</strong> for <strong>${target2}</strong>
             <br />
             <br />
             Please try to answer as fast as possible!
@@ -97,9 +103,9 @@ const post_test = babeViews.view_generator("post_test",{
     edu_graduated_high_school: 'left',
     edu_graduated_college: 'right',
     edu_higher_degree: 'both equally',
-    buttonText: "Finish & Submit"
-    // languages_question: 'Muttersprache',
-    // languages_more: '(in der Regel die Sprache, die Sie als Kind zu Hause gesprochen haben)',
+    buttonText: "Finish & Submit Data",
+    // languages_question: 'Consent',
+    // languages_more: '(leave empty if you still agree to your data being analyzed)'
     // comments_question: 'Weitere Kommentare'
 });
 
