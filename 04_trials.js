@@ -111,5 +111,5 @@ const demo = [
 ];
 */
 
-trials_pract = generate_trials(16)
+trials_pract = generate_trials(24)
 trials_experiment = generate_trials(200)
