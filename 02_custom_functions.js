@@ -10,7 +10,7 @@ const targets = _.shuffle(['circle', 'square']);
 const target1 = targets[0];
 const target2 = targets[1];
 
-const key_set = _.sample([["m", "b"], ["q", "p"]])
+const key_set = _.sample([["b", "m"], ["q", "p"]])
 const key1 = key_set[0]
 const key2 = key_set[1]
 
