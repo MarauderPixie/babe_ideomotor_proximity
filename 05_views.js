@@ -59,9 +59,9 @@ const instructions = babeViews.view_generator("instructions",{
             Your task is to press a key depending on which symbol you see: 
             <br />
             <br />
-            press <strong>x</strong> for <strong>${target1}</strong>
+            press <strong>${key1}</strong> for <strong>${target1}</strong>
             <br />
-            press <strong>m</strong> for <strong>${target2}</strong>
+            press <strong>${key2 == "p" ? "+" : key2}</strong> for <strong>${target2}</strong>
             <br />
             <br />
             Please try to answer as fast as possible!
@@ -78,7 +78,12 @@ const begin_prompt = babeViews.view_generator("begin",{
 	title: 'Start with the experiment',
     text: `<b>Very good!</b> 
            <br>
-           The next part will be the actual experiment.
+           The next part will be the actual experiment. In Contrast to the practice, 
+           you won't see the key assignment, so please memorize it:           
+           <br><br>
+           <strong>${key1}:</strong> ${target1}
+            <br />
+            <strong>${key2 == "p" ? "+" : key2}:</strong> ${target2}
            <br><br>
            Remember to answer as <b>fast</b> and as <b>accurate</b> as possible.`,
 	buttonText: "Let's go!"
@@ -90,7 +95,9 @@ const post_test = babeViews.view_generator("post_test",{
     trials: 1,
     name: 'post_test',
     title: 'Additional information',
-    text: 'Answering the following questions is optional, but your answers will help us analyze our results.',
+    text: `<strong>Great, your almost done!</strong>
+           <br>
+           Answering the following questions is optional, but your answers will help us analyze our results.`,
 
     // You can change much of what appears here, e.g., to present it in a different language, as follows:
     // buttonText: 'Weiter',
