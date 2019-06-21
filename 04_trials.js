@@ -9,34 +9,29 @@ const opts = {
         {   // square right
             key1: key1,
             key2: key2,
-            // coding: target1 == "square" ? "incongruent" : "congruent",
-            // target_obj: "square",
+            target: "square",
             expected: target1 == "square" ? key2 : key1,
-            proximity: "close",
             picture: "images/square_close_right.png"
         },
         {   // circle right
             key1: key1,
             key2: key2,
-            // target_obj: "circle",
+            target: "circle",
             expected: target1 == "circle" ? key2 : key1,
-            proximity: "close",
             picture: "images/circle_close_right.png"
         },
         {   // square left
             key1: key1,
             key2: key2,
-            // target_obj: "square",
+            target: "square",
             expected: target1 == "square" ? key1 : key2,
-            proximity: "close",
             picture: "images/square_close_left.png"
         },
         {   // circle left
             key1: key1,
             key2: key2,
-            // target_obj: "circle",
+            target: "circle",
             expected: target1 == "circle" ? key1 : key2,
-            proximity: "close",
             picture: "images/circle_close_left.png"
         },
         /*
@@ -45,33 +40,29 @@ const opts = {
        {   // square right
         key1: key1,
         key2: key2,
-        // target_obj: "square", 
+        target: "square", 
         expected: target1 == "square" ? key2 : key1,
-        proximity: "far",
         picture: "images/square_far_right.png"
     },        
     {   // circle right
         key1: key1,
         key2: key2,
-        // target_obj: "circle",
+        target: "circle",
         expected: target1 == "circle" ? key2 : key1,
-        proximity: "far",
         picture: "images/circle_far_right.png"
     },        
     {   // square left
         key1: key1,
         key2: key2,
-        // target_obj: "square",
+        target: "square",
         expected: target1 == "square" ? key1 : key2,
-        proximity: "far",
         picture: "images/square_far_left.png"
     },        
     {   // circle left
         key1: key1,
         key2: key2,
-        // target_obj: "circle",
+        target: "circle",
         expected: target1 == "circle" ? key1 : key2,
-        proximity: "far",
         picture: "images/circle_far_left.png"
     }
     ]
