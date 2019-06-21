@@ -1,48 +1,41 @@
 // In this file you can specify the trial data for your experiment
 
 const opts = {
+    // GENREL THOUGHT:
+    // it seems I need a "expected" variable in every condition
+    // which is being checked for correctness (so I don't have to do it in R)
+    // OR I could (maybe?) change that in babe.js
     key_press: [
         {   // square right
-            key1: "x",
-            key2: "m",
-            x: target1,
-            m: target2,
-            coding: target1 == "square" ? "incongruent" : "congruent",
-            target_obj: "square",
-            target_key: target1 == "square" ? "x" : "m",
+            key1: key1,
+            key2: key2,
+            // coding: target1 == "square" ? "incongruent" : "congruent",
+            // target_obj: "square",
+            expected: target1 == "square" ? key2 : key1,
             proximity: "close",
             picture: "images/square_close_right.png"
-        },        
+        },
         {   // circle right
-            key1: "x",
-            key2: "m",
-            x: target1,
-            m: target2,
-            coding: target1 == "square" ? "congruent" : "incongruent",
-            target_obj: "circle",
-            target_key: target1 == "circle" ? "x" : "m",
+            key1: key1,
+            key2: key2,
+            // target_obj: "circle",
+            expected: target1 == "circle" ? key2 : key1,
             proximity: "close",
             picture: "images/circle_close_right.png"
-        },        
+        },
         {   // square left
-            key1: "x",
-            key2: "m",
-            x: target1,
-            m: target2,
-            coding: target1 == "square" ? "congruent" : "incongruent",
-            target_obj: "square",
-            target_key: target1 == "square" ? "x" : "m",
+            key1: key1,
+            key2: key2,
+            // target_obj: "square",
+            expected: target1 == "square" ? key1 : key2,
             proximity: "close",
             picture: "images/square_close_left.png"
-        },        
+        },
         {   // circle left
-            key1: "x",
-            key2: "m",
-            x: target1,
-            m: target2,
-            coding: target1 == "square" ? "incongruent" : "congruent",
-            target_obj: "circle",
-            target_key: target1 == "circle" ? "x" : "m",
+            key1: key1,
+            key2: key2,
+            // target_obj: "circle",
+            expected: target1 == "circle" ? key1 : key2,
             proximity: "close",
             picture: "images/circle_close_left.png"
         },
@@ -50,46 +43,34 @@ const opts = {
         FAR CUES
         */
        {   // square right
-        key1: "x",
-        key2: "m",
-        x: target1,
-        m: target2,
-        coding: target1 == "square" ? "incongruent" : "congruent",
-        target_obj: "square",
-        target_key: target1 == "square" ? "x" : "m",
+        key1: key1,
+        key2: key2,
+        // target_obj: "square", 
+        expected: target1 == "square" ? key2 : key1,
         proximity: "far",
         picture: "images/square_far_right.png"
     },        
     {   // circle right
-        key1: "x",
-        key2: "m",
-        x: target1,
-        m: target2,
-        coding: target1 == "square" ? "congruent" : "incongruent",
-        target_obj: "circle",
-        target_key: target1 == "circle" ? "x" : "m",
+        key1: key1,
+        key2: key2,
+        // target_obj: "circle",
+        expected: target1 == "circle" ? key2 : key1,
         proximity: "far",
         picture: "images/circle_far_right.png"
     },        
     {   // square left
-        key1: "x",
-        key2: "m",
-        x: target1,
-        m: target2,
-        coding: target1 == "square" ? "congruent" : "incongruent",
-        target_obj: "square",
-        target_key: target1 == "square" ? "x" : "m",
+        key1: key1,
+        key2: key2,
+        // target_obj: "square",
+        expected: target1 == "square" ? key1 : key2,
         proximity: "far",
         picture: "images/square_far_left.png"
     },        
     {   // circle left
-        key1: "x",
-        key2: "m",
-        x: target1,
-        m: target2,
-        coding: target1 == "square" ? "incongruent" : "congruent",
-        target_obj: "circle",
-        target_key: target1 == "circle" ? "x" : "m",
+        key1: key1,
+        key2: key2,
+        // target_obj: "circle",
+        expected: target1 == "circle" ? key1 : key2,
         proximity: "far",
         picture: "images/circle_far_left.png"
     }
@@ -101,10 +82,12 @@ const demo = [
     {
         question: "Your age (in years):",
         option1: "<20",
+</strong>    }
         option2: "<25"
     },
     {
         question: "Your major hand?",
+</strong>    }
         option1: "left",
         option2: "right"
     }
