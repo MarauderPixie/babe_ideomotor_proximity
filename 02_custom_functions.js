@@ -100,10 +100,15 @@ const time_limit = function(data, next) {
     if (typeof window.timeout === 'undefined'){
         window.timeout = [];
     }
+
+    clearTimeout(window.timeout[0]);
+    window.timeout.shift();
+
     /* Add timeouts to the timeoutarray
     window.timeout.push(setTimeout(function(){
          $(".babe-view-stimulus").addClass("babe-invisible");
     }, 500)); */
+
     // Reminds the participant to respond after 5 seconds
     window.timeout.push(setTimeout(function(){
           $('#reminder').text('Please answer more quickly!');

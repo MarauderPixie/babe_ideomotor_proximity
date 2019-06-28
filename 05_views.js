@@ -132,7 +132,7 @@ const practice = babeViews.view_generator('key_press', {
     data: trials_pract,
     pause: Math.floor(Math.random()*(1000)+1000),
     fix_duration: Math.floor(Math.random()*(50)+200),
-    // hook: {after_response_enabled: time_limit},
+    hook: {after_response_enabled: time_limit},
 }, {
     stimulus_container_generator: custom_stimuli.key_press
 });
@@ -143,7 +143,7 @@ const experiment = babeViews.view_generator('key_press', {
     data: trials_experiment,
     pause: Math.floor(Math.random()*(1000)+1000),
     fix_duration: Math.floor(Math.random()*(50)+200),
-    // hook: {after_response_enabled: time_limit},
+    hook: {after_response_enabled: time_limit},
 }, {
     stimulus_container_generator: custom_stimuli.key_press
 });
