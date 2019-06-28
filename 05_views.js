@@ -78,12 +78,11 @@ const begin_prompt = babeViews.view_generator("begin",{
 	title: 'Start with the experiment',
     text: `<b>Very good!</b> 
            <br>
-           The next part will be the actual experiment. In Contrast to the practice, 
-           you won't see the key assignment, so please memorize it:           
+           The next part will be the actual experiment. Please memorize the key assignment it:           
            <br><br>
            <strong>${key1}:</strong> ${target1}
-            <br />
-            <strong>${key2 == "p" ? "+" : key2}:</strong> ${target2}
+           <br />
+           <strong>${key2 == "p" ? "+" : key2}:</strong> ${target2}
            <br><br>
            Remember to answer as <b>fast</b> and as <b>accurate</b> as possible.`,
 	buttonText: "Let's go!"
@@ -99,21 +98,20 @@ const post_test = babeViews.view_generator("post_test",{
            <br>
            Answering the following questions is optional, but your answers will help us analyze our results.`,
 
-    // You can change much of what appears here, e.g., to present it in a different language, as follows:
-    // buttonText: 'Weiter',
-    // age_question: 'Alter',
-    gender_question: 'Have you done a similar task before or know what a Simon Task is?',
-    gender_male: 'Yes (either or)',
-    gender_female: 'No',
-    gender_other: 'Yes, both.',
-    edu_question: 'Your major hand?',
-    edu_graduated_high_school: 'left',
-    edu_graduated_college: 'right',
-    edu_higher_degree: 'both equally',
-    buttonText: "Finish & Submit Data",
-    // languages_question: 'Consent',
-    // languages_more: '(leave empty if you still agree to your data being analyzed)'
-    // comments_question: 'Weitere Kommentare'
+    hand_question: "Which is your main hand?",
+
+    knl_question: "Do you know the Simon Task and/or Common Coding Theory?",
+    knl_opt1: "Yes - Simon Effect",
+    knl_opt2: "Yes - Common Coding Theory",
+    knl_opt3: "Yes - both",
+    knl_opt4: "No, neither",
+
+    part_question: "Have you participated in a similar experiment before?",
+    
+    buttonText: "Finish & Submit Data"
+}, {
+    answer_container_generator: custom_answers.post_test,
+    handle_response_function: custom_response_handling.post_test
 });
 
 // The 'thanks' view is crucial; never delete it; it submits the results!
@@ -133,7 +131,10 @@ const practice = babeViews.view_generator('key_press', {
     name: 'practice',
     data: trials_pract,
     pause: Math.floor(Math.random()*(1000)+1000),
-    fix_duration: Math.floor(Math.random()*(50)+200)
+    fix_duration: Math.floor(Math.random()*(50)+200),
+    // hook: {after_response_enabled: time_limit},
+}, {
+    stimulus_container_generator: custom_stimuli.key_press
 });
 
 const experiment = babeViews.view_generator('key_press', {
@@ -141,15 +142,8 @@ const experiment = babeViews.view_generator('key_press', {
     name: 'experiment',
     data: trials_experiment,
     pause: Math.floor(Math.random()*(1000)+1000),
-    fix_duration: Math.floor(Math.random()*(50)+200)
+    fix_duration: Math.floor(Math.random()*(50)+200),
+    // hook: {after_response_enabled: time_limit},
+}, {
+    stimulus_container_generator: custom_stimuli.key_press
 });
-
-/*
-This ain't rite
-
-const demographics = babeViews.view_generator('forced_choice', {
-    trials: demo.length,
-    name: "demographics",
-    data: demo
-});
-*/
