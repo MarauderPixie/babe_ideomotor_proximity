@@ -26,7 +26,9 @@ const intro = babeViews.view_generator("intro",{
     text:   `Thank you for participating in our experiment!
             <br />
             <br />
-            It will take about <b>8 minutes</b> to complete. 
+            It will take about <b>17 minutes</b> to complete. 
+            <br />
+            You are in group <strong>${key1 == "b" ? "b / m" : "p / +"}</strong>.
             <br />
             <br />
             Please make sure you will not be distracted for that duration.
