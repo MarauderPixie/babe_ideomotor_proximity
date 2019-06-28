@@ -20,8 +20,16 @@
 
 .babe-view-picture {
     position: relative;
-    top: 100px;
+    top: 110px;
     height: 124px;
     width: 992px;
 }
 
+/* actually intended for reminder message, which sadly is broken */
+.babe-response-keypress-footer {
+    color: rgba(0, 0, 0, 0.87);
+    font-family: "Lato", "Noto Sans", sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+}
