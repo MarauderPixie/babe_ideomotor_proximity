@@ -14,12 +14,49 @@ const key_set = _.sample([["b", "m"], ["q", "p"]])
 const key1 = key_set[0]
 const key2 = key_set[1]
 
+// Not sure if this belongs here, but I need it for my custom post_test
+const customUtils = {
+    fill_custom_post_test: function(config) {
+        return {
+            age: {
+                title: babeUtils.view.setter.prop(config.age_question, "Age")
+            },
+            gender: {
+                title: babeUtils.view.setter.prop(config.gender_question, "Gender"),
+                male: babeUtils.view.setter.prop(config.gender_male, "male"),
+                female: babeUtils.view.setter.prop(config.gender_female, "female"),
+                other: babeUtils.view.setter.prop(config.gender_other, "other")
+            },
+            hand: {
+                title: babeUtils.view.setter.prop(config.hand_question, "Level of Education"),
+                left: babeUtils.view.setter.prop(config.left, "Left"),
+                right: babeUtils.view.setter.prop(config.right, "Right"),
+                both: babeUtils.view.setter.prop(config.both, "Both equally")
+            },
+            knl: {
+                title: babeUtils.view.setter.prop(config.knl_question, "SOMETHING AWFUL"),
+                opt1: babeUtils.view.setter.prop(config.knl_opt1, "There"),
+                opt2: babeUtils.view.setter.prop(config.knl_opt2, "Is"),
+                opt3: babeUtils.view.setter.prop(config.knl_opt3, "No"),
+                opt4: babeUtils.view.setter.prop(config.knl_opt4, "Default")
+            },
+            part: {
+                title: babeUtils.view.setter.prop(config.part_question, "Simple Yes/No Question"),
+                yes: babeUtils.view.setter.prop(config.left, "Yes"),
+                no: babeUtils.view.setter.prop(config.roght, "No")
+            },
+            comments: {
+                title: babeUtils.view.setter.prop(config.comments_question, "Further Comments")
+            }
+        };
+    }
+};
+
 
 /* Helper functions
 *
 *
 */
-
 
 /* For generating random participant IDs */
     // https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
@@ -27,12 +64,15 @@ const key2 = key_set[1]
 const dec2hex = function(dec) {
     return ("0" + dec.toString(16)).substr(-2);
 };
+
 // generateId :: Integer -> String
 const generateID = function(len) {
     let arr = new Uint8Array((len || 40) /2);
     window.crypto.getRandomValues(arr);
     return Array.from(arr, this.dec2hex).join("");
 };
+
+
 // Declare your helper functions here
 // get list of trial thingies
 generate_trials = function(n) {
@@ -60,11 +100,16 @@ const time_limit = function(data, next) {
     if (typeof window.timeout === 'undefined'){
         window.timeout = [];
     }
-    // Add timeouts to the timeoutarray
+    /* Add timeouts to the timeoutarray
+    window.timeout.push(setTimeout(function(){
+         $(".babe-view-stimulus").addClass("babe-invisible");
+    }, 500)); */
     // Reminds the participant to respond after 5 seconds
     window.timeout.push(setTimeout(function(){
           $('#reminder').text('Please answer more quickly!');
-    }, 5000));
+          // $('#key_assignment').text('${key1}: ${target1}  ::: {key2 == "p" ? "+" : key2}: ${target2}');
+          // <br /><br /><strong>${key1}:</strong> ${target1}  ::: <strong>${key2 == "p" ? "+" : key2}:</strong> ${target2}
+    }, 3000));
     next();
 };
 
@@ -79,32 +124,3 @@ check_response = function(data, next) {
         next();
     })
 }
-
-
-/* doesn't work =(
-correctness = function(data, next) {
-    $('input[name=key_pressed]').on('change', function(e) {
-        let correctness
-
-        if (
-            data.target_key ===
-            e.target.value
-        ) {
-            correctness = "correct";
-        } else {
-            correctness = "incorrect";
-        }
-        next();
-    })
-}
-*/
-
-
-
-// Declare your hooks here
-
-
-/* Generators for custom view templates, answer container elements and enable response functions
-*
-*
-*/
