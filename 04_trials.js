@@ -1,14 +1,16 @@
 // In this file you can specify the trial data for your experiment
 
 const opts = {
-    // GENREL THOUGHT:
-    // it seems I need a "expected" variable in every condition
-    // which is being checked for correctness (so I don't have to do it in R)
-    // OR I could (maybe?) change that in babe.js
     key_press: [
         {   // square right
             key1: key1,
             key2: key2,
+            /* 
+                assigning all 4 options seems rather clunky, but since 
+                key1 and key2 are expected anyway and undefined when not assigned...
+                ...I'd rather not assign at all;
+                e.g. if target == "circle" & expected == "m", I know which target o assigned to which key)
+            */
             target: "square",
             expected: target1 == "square" ? key2 : key1,
             picture: "images/square_close_right.png"
@@ -44,7 +46,7 @@ const opts = {
         expected: target1 == "square" ? key2 : key1,
         picture: "images/square_far_right.png"
     },        
-    {   // circle right
+    {   // circle righty
         key1: key1,
         key2: key2,
         target: "circle",
@@ -68,22 +70,5 @@ const opts = {
     ]
 };
 
-/*
-const demo = [
-    {
-        question: "Your age (in years):",
-        option1: "<20",
-</strong>    }
-        option2: "<25"
-    },
-    {
-        question: "Your major hand?",
-</strong>    }
-        option1: "left",
-        option2: "right"
-    }
-];
-*/
-
-trials_pract = generate_trials(24)
-trials_experiment = generate_trials(200)
+trials_pract = generate_trials(8)
+trials_experiment = generate_trials(8) // final number: 280
