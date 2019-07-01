@@ -70,5 +70,5 @@ const opts = {
     ]
 };
 
-trials_pract = generate_trials(16)
-trials_experiment = generate_trials(16) // final number: 280
+trials_pract = generate_trials(24)
+trials_experiment = generate_trials(400) // 400 = 50 trials per stimulus
