@@ -28,7 +28,7 @@ const intro = babeViews.view_generator("intro",{
             <br />
             It will take about <b>17 minutes</b> to complete. 
             <br />
-            You are in group <strong>${key1 == "b" ? "b / m" : "p / +"}</strong>.
+            You are in group <strong>${key1 == "b" ? "b / m" : "q / +"}</strong>.
             <br />
             <br />
             Please make sure you will not be distracted for that duration.
@@ -80,7 +80,7 @@ const begin_prompt = babeViews.view_generator("begin",{
 	title: 'Start with the experiment',
     text: `<b>Very good!</b> 
            <br>
-           The next part will be the actual experiment. Please memorize the key assignment it:           
+           The next part will be the actual experiment. Please memorize the key assignment:           
            <br><br>
            <strong>${key1}:</strong> ${target1}
            <br />
@@ -134,7 +134,7 @@ const practice = babeViews.view_generator('key_press', {
     data: trials_pract,
     pause: Math.floor(Math.random()*(1000)+1000),
     fix_duration: Math.floor(Math.random()*(50)+200),
-    hook: {after_response_enabled: time_limit},
+    hook: {after_response_enabled: time_limit}, // check_response}, 
 }, {
     stimulus_container_generator: custom_stimuli.key_press
 });
