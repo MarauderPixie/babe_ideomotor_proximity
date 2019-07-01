@@ -112,19 +112,20 @@ const time_limit = function(data, next) {
     // Reminds the participant to respond after 5 seconds
     window.timeout.push(setTimeout(function(){
           $('#reminder').text('Please answer more quickly!');
-          // $('#key_assignment').text('${key1}: ${target1}  ::: {key2 == "p" ? "+" : key2}: ${target2}');
-          // <br /><br /><strong>${key1}:</strong> ${target1}  ::: <strong>${key2 == "p" ? "+" : key2}:</strong> ${target2}
-    }, 3000));
+    }, 3750));
     next();
 };
 
 // compares the chosen answer to the value of `option1`
+//
+// I tried to modify this for this task but failed badly =(
 check_response = function(data, next) {
-    $('input[name=answer]').on('change', function(e) {
-        if (e.target.value === data.correct) {
-            alert('Your answer is correct! Yey!');
+    $('input[name=keyPressed]').on('change', function(e) {
+        if (e.target.value === data.key_pressed) {
+            $('#reminder').text('You go, gurl!');
         } else {
-            alert('Sorry, this answer is incorrect :( The correct answer was ' + data.correct);
+            $('#reminder').text('YOU FAIL!!');
+            //alert('Sorry, this answer is incorrect :( The correct answer was ' + e.expected);
         }
         next();
     })
