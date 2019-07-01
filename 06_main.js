@@ -25,7 +25,7 @@ $("document").ready(function() {
         ],
         // Here, you can specify all information for the deployment
         deploy: {
-            experimentID: "7",
+            experimentID: "6",
             serverAppURL: "https://babe.tadaa-data.de/api/submit_experiment/",
             // Possible deployment methods are:
             // "debug" and "directLink"
