@@ -66,7 +66,7 @@ const instructions = babeViews.view_generator("instructions",{
             press <strong>${key2 == "p" ? "+" : key2}</strong> for <strong>${target2}</strong>
             <br />
             <br />
-            Please try to answer as fast as possible!
+            Please try to respond as <strong>fast</strong> and as <strong>accurate</strong> as possible!
             <br />
             <br />
             Before we start with the actual experiment you will now run through a short practice round to 
@@ -86,7 +86,7 @@ const begin_prompt = babeViews.view_generator("begin",{
            <br />
            <strong>${key2 == "p" ? "+" : key2}:</strong> ${target2}
            <br><br>
-           Remember to answer as <b>fast</b> and as <b>accurate</b> as possible.`,
+           Remember to respond as <b>fast</b> and as <b>accurate</b> as possible.`,
 	buttonText: "Let's go!"
 });
 
@@ -100,8 +100,15 @@ const post_test = babeViews.view_generator("post_test",{
            <br>
            Answering the following questions is optional, but your answers will help us analyze our results.`,
 
-    hand_question: "Which is your main hand?",
+    hand_question: "Which is your dominant hand?",
 
+    /*
+    knl_question: "Do you know the Simon Task and/or Common Coding Theory?",
+    knl_opt1: "Yes - Simon Effect",
+    knl_opt2: "Yes - Common Coding Theory",
+    knl_opt3: "Yes - both",
+    knl_opt4: "No, neither",
+    */
     knl_question: "Do you know the Simon Task and/or Common Coding Theory?",
     knl_opt1: "Yes - Simon Effect",
     knl_opt2: "Yes - Common Coding Theory",

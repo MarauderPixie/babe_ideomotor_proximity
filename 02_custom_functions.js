@@ -111,7 +111,7 @@ const time_limit = function(data, next) {
 
     // Reminds the participant to respond after 5 seconds
     window.timeout.push(setTimeout(function(){
-          $('#reminder').text('Please answer more quickly!');
+          $('#reminder').text('Please respond more quickly!');
     }, 3750));
     next();
 };
